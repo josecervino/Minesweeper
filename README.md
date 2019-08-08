@@ -1,13 +1,30 @@
-<Game />
-    resetBoard(string) {
-        switch
-            case 'beginner'
-                return <Board />
-            case 'intermediate'
-                return <Board />
-            case 'advanced'
-                return <Board />
-    }
+### App Functionality
+    this.state = {
+                wins:
+                losses:
+            }
+            incrementWins() {
+                setState wins: prevState + 1
+            }
+            incrementLosses() {
+                setState losses: prevState + 1
+            }
+
+- [ ] [STRETCH] Keep track of wins and losses in a scoreboard
+
+### Game Functionality
+    <Game />
+        turns:
+        time:
+        difficulty:
+        reset:
+
+- [x] Increment turn count on every cell open
+- [x] Increment timer on every passing second
+- [x] Trigger board reset on game difficulty change
+- [ ] End Game method to assess win state
+        - wins and losses invoke passed incremenetor method for leaderboard?
+
 
 ### Board Functionality (Stateful component using props methods and properties)
     <Board />
@@ -43,10 +60,17 @@
                 this
             })
         }
+        resetBoard(string) {
+            switch
+                case 'beginner'
+                    return <Board />
+                case 'intermediate'
+                    return <Board />
+                case 'advanced'
+                    return <Board />
+        }
 
-
-
-- [ ] 3 difficulty levels
+- [x] 3 difficulty levels
     - 'Beginner' = 9x9, 10 mines
     - 'Intermediate' = 16x16, 40 mines
     - 'Advanced' = 16x30, 99 mines
@@ -60,19 +84,18 @@
         - map through cells
         - Random number generated between min and max of cell count
         - cell number to determine whether mine is applied or not
-            - Coordinate system?
+
 
 ### Cell Functionality (Stateless component using props methods and properties)
-<Cell />
+    <Cell />
     onClick = () => {
         this.props.openCell(this.props.cellId)
     }
 
-
-- [ ] Open cell when player clicks on cell
+- [x] Open cell when player clicks on cell
         - onClick changing cell style value -> style ternary for cell open boolean
         - open and closed state for cell
-- [ ] Clicking on a cell containing a mine results in game over, resetting the game
+- [x] Clicking on a cell containing a mine results in game over, resetting the game
         - Check mine boolean value of cell
         - gameOver() method resetting the board, calling ResetBoard()
 - [ ] Clicking on cell with no mines as neighbors opens those cells as well
@@ -80,7 +103,23 @@
 - [ ] Opening all un-mined cells results in winning the game
         - onClick of cells triggers incrementor value in board with conditional triggering gameWon()
         - gameWon() alerts user that the game has been won, resets the board with ResetBoard()
+- [ ] Right click on buttons marks them and disallows further clicking until it is right-clicked again
+- [ ] Cells display the number of adjacent mines
 
+
+### Style
+
+- [x] Make the board's width adaptive to consistently hold the correct amount of cells
+- [x] Inline game settings bar
+- [ ] Animation for cell opening & chain opening effect
+- [ ] Explosion for mine click
+- [x] Center the board
+
+
+### Docs
+
+- [ ] Add docs to every component explaining necessary props for functionality
+- [ ] Add docs for methods in every component
 
 --------------------------------------------------------------------------------------------------------------------
 
