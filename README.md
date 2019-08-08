@@ -22,8 +22,8 @@
 - [x] Increment turn count on every cell open
 - [x] Increment timer on every passing second
 - [x] Trigger board reset on game difficulty change
-- [ ] End Game method to assess win state
-        - wins and losses invoke passed incremenetor method for leaderboard?
+- [x] End Game method to assess win state
+        - wins and losses invoke passed incrementor method for leaderboard?
 
 
 ### Board Functionality (Stateful component using props methods and properties)
@@ -104,7 +104,7 @@
         - onClick of cells triggers incrementor value in board with conditional triggering gameWon()
         - gameWon() alerts user that the game has been won, resets the board with ResetBoard()
 - [ ] Right click on buttons marks them and disallows further clicking until it is right-clicked again
-- [ ] Cells display the number of adjacent mines
+- [x] Cells display the number of adjacent mines
 
 
 ### Style
