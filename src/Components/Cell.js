@@ -1,15 +1,12 @@
 import React from 'react';
-
+// TODO: toggle the button text depending on openState
 const Cell = props => {
-    const {changeState, cellId, openState} = props;
-    const state = {
-        open: openState,
-    }
-    return (
-        <button 
-            className={state.open ? 'open' : 'close'}
-            onClick={() => changeState(cellId)} />
-    )
+    return <button 
+                className={props.openState ? 'open' : 'closed'}
+                onClick={() => {
+                    if (!props.openState) props.changeCellOpenState(props.cellId)
+                }}
+            >{props.openState && props.adjacentMineCount !== 0 ? `${props.adjacentMineCount}` : ''}</button>
 }
 
 export default Cell;

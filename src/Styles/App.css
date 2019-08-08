@@ -1,0 +1,146 @@
+/*
+CSS Reset =================================================
+  http://meyerweb.com/eric/tools/css/reset/ 
+  v2.0 | 20110126
+  License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 
+Grid =================================================
+*/
+
+html, body {
+	width: 100%;
+	display: grid;
+}
+.App {
+	display: grid;
+	justify-content: center;
+	align-content: center;
+}
+
+.game-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+.settings-bar {
+	width: 440px;
+	margin-top: 40px;
+	padding-bottom: 20px;
+	display: grid;
+	grid-template-areas: "turns difficulty time";
+	border-bottom: .5px solid rgb(167, 167, 167);
+}
+.turns {
+	grid-area: "turns";
+	justify-self: left;
+}
+.difficulty {
+	grid-area: "difficulty";
+	justify-self: center;
+}
+.time {
+	grid-area: "time";
+	justify-self: right;
+}
+
+.beginner-container {
+	margin: 40px;
+	width: 210px;
+	justify-self: center;
+	align-self: center;
+}
+.non-beginner-container {
+	margin: 40px;
+	width: 360px;
+	justify-self: center;
+	align-self: center;
+}
+
+/*
+Styles =================================================
+*/
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+	  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+	  sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 14px;
+  }
+  
+  code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+	  monospace;
+  }
+
+/* 
+Buttons =================================================
+*/
+
+  button {
+	width: 22px;
+	height: 22px;
+  }
+  button:focus {
+	outline: none;
+  }
+  select {
+	background: none;
+	font-size: 14px;
+	border: .5px solid rgb(167, 167, 167);
+  }
+  .open {
+	  background-color: rgb(255, 255, 255);
+	  border-color: rgb(193, 193, 193);
+	  border-style: dotted;
+	}
+  .closed {
+	background-color: rgb(40, 40, 40);
+  }
